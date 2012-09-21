@@ -3,11 +3,13 @@ PySolrQuery
 
 A tentative API for interacting with Solr from python.
 
-- What is PySolrQuery?
+What is PySolrQuery?
+--------------------
 
 PySolrQuery is a lightweight module to do Solr searches within python.
 
-- How do I use it?
+How do I use it?
+----------------
 
 There's a Solr class with handy methods.
 
@@ -31,3 +33,21 @@ musician 1
 actor 1
 ```
 
+You can pass query parameters as keyword arguments:
+
+```python
+> searchResults = solr.doSearch(q = 'name:Mary', fl = 'name, profession, age', fq = 'age)
+```
+
+You can easily create custom searches by extending the Solr class:
+
+```python
+class MyCustomSearch(Solr)
+    def _basic_fixed_params(self):
+        base = Solr._basic_fixed_params(self)
+        return base + {'defType': 'dismax', 'qf': 'name^2.0 parentsname^1.0 profession^0.5'}
+
+
+solr = MyCustomSearch(host = 'localhost')
+print solr.doSearch(q = 'mary doctor')
+```
