@@ -52,4 +52,7 @@ solr = MyCustomSearch(host = 'localhost')
 print solr.doSearch(q = 'mary doctor')
 ```
 
-Parameters returned by the ```Solr._basic_fixed_params()``` method are made fixed over all queries and parameters returned by the ```Solr._required_params()``` method raise a RequiredParamException when not present in a call to doSearch() or doFacet().
+Parameters returned by the ```Solr._basic_fixed_params()``` method are made fixed over all queries and parameters 
+returned by the ```Solr._required_params()``` method raise a ```RequiredParamException``` when not present in a call 
+to ```doSearch()``` or ```doFacet()```.
+
