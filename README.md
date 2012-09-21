@@ -1,41 +1,14 @@
 PySolrQuery
 ===========
 
-A tentative API for interacting with Solr from python.
-
-What is PySolrQuery?
---------------------
-
-PySolrQuery is a lightweight module to do Solr searches within python.
+A tentative lightweight API for to make Solr queries within python.
 
 Dependencies:
 -------------
-
-- [requests](http://docs.python-requests.org/en/latest/index.html)  
-
-    just install it via ```sudo pip install requests```
-
-
-TODO
-----
-
-- needs a proper module structure
-- needs a setup.py to deal with dependencies
-- needs a better way to deal with the paths in the host URL.
-- needs a way to do facets in multiple fields in the same query
-- needs tests
-
-Known issues:
-
-- It's not possible to do multiple facets in the same query right now. This stems from the use of the ```requests``` module.
-Query parameters are passed through a dictionary to the post method, and python dictionaries can't have two fields with the same key.
-
-
-
-
+- [requests](http://docs.python-requests.org/en/latest/index.html): just install it via ```sudo pip install requests```
 
 How do I use it?
-----------------
+================
 
 There's a Solr class with handy methods.
 
@@ -103,5 +76,18 @@ Parameters returned by the ```Solr._basic_fixed_params()``` method are made fixe
 returned by the ```Solr._required_params()``` method raise a ```RequiredParamException``` when not present in a call 
 to ```doSearch()``` or ```doFacet()```.
 
+To do list and Known issues:
+----------------------------
+
+- needs a proper module structure
+- needs a setup.py to deal with dependencies
+- needs a better way to deal with the paths in the host URL.
+- needs a way to do facets in multiple fields in the same query
+- needs tests
+
+Known issues:
+
+- It's not possible to do multiple facets in the same query right now. This stems from the use of the ```requests``` module.
+Query parameters are passed through a dictionary to the post method, and python dictionaries can't have two fields with the same key.
 
 
