@@ -11,8 +11,10 @@ PySolrQuery is a lightweight module to do Solr searches within python.
 Dependencies:
 -------------
 
-- *requests*   (just install it via ```sudo pip install requests```)
-- 
+- [requests](http://docs.python-requests.org/en/latest/index.html)  
+
+    just install it via ```sudo pip install requests```
+
 
 TODO
 ----
