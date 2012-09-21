@@ -3,12 +3,8 @@ PySolrQuery
 
 A tentative lightweight API for to make Solr queries within python.
 
-Dependencies:
--------------
-- [requests](http://docs.python-requests.org/en/latest/index.html): just install it via ```sudo pip install requests```
-
 How do I use it?
-================
+----------------
 
 There's a Solr class with handy methods.
 
@@ -89,5 +85,9 @@ Known issues:
 
 - It's not possible to do multiple facets in the same query right now. This stems from the use of the ```requests``` module.
 Query parameters are passed through a dictionary to the post method, and python dictionaries can't have two fields with the same key.
+
+Dependencies:
+-------------
+- [requests](http://docs.python-requests.org/en/latest/index.html): just install it via ```sudo pip install requests```
 
 
